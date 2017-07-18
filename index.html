@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<script>
+  var cv = document.querySelector("#cv");
+  var con = cv.getContext("2d");
+  cv.width = "800";
+  cv.height = "600";
+  cv.style.border = "1px solid #f00";
+
+  var x = 100;
+  for (var i = 0; i < 256; i++) {
+    con.beginPath();
+    con.moveTo(x, 100);
+    con.lineTo(x, 200);
+    con.strokeStyle = "rgb(" + (255 - i) + ",0," + i + ")";
+    con.stroke();
+    x++;
+  }
+
+</script>
+</body>
+</html>
